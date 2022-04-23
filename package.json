@@ -2,19 +2,34 @@
   "name": "electrontest",
   "version": "1.0.0",
   "description": "",
-  "main": "main.js",
+  "main": "main.cjs",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "electron .",
-    "genData": "node config-to-data.js /Users/candice/Dropbox/SaveGames/doom/doomloader/config.js data.json"
+    "genData": "node config-to-data.js /Users/candice/Dropbox/SaveGames/doom/doomloader/config.js data.json",
+    "build": "webpack",
+    "buildAndRun": "webpack; electron ."
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "electron": "^17.1.0"
+    "@babel/cli": "^7.17.6",
+    "@babel/core": "^7.17.9",
+    "@babel/plugin-transform-modules-commonjs": "^7.17.9",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-es2015": "^7.0.0-beta.53",
+    "babel-loader": "^8.2.5",
+    "babel-preset-env": "^1.7.0",
+    "electron": "^17.1.0",
+    "webpack": "^5.72.0",
+    "webpack-cli": "^4.9.2"
   },
   "dependencies": {
+    "babel-preset-es2015": "^6.24.1",
     "chalk": "^5.0.1",
+    "es2015": "^0.0.0",
+    "html-webpack-plugin": "^5.5.0",
     "pug": "^3.0.2"
-  }
+  },
+  "type": "commonjs"
 }

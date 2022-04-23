@@ -1,3 +1,4 @@
+- const sanitise = require("./utils.js").sanitise;
 button(onclick="refresh();") Refresh
 table
 	//tr
@@ -11,14 +12,14 @@ table
 	each profile in profiles
 		tr
 			td
-				button(onclick="doom('" + sanitise(profile.name) + "')") Run
+				button(onclick="require('./profiles.js').doom('" + sanitise(profile.name) + "')") Run
 			td
-				button(onclick="editProfile('" + sanitise(JSON.stringify(profile)) + "')") Edit
+				button(onclick="require('./profiles.js').editProfile('" + sanitise(JSON.stringify(profile)) + "')") Edit
 			td
-				button(onclick="deleteProfile('" + sanitise(JSON.stringify(profile)) + "')") Delete
+				button(onclick="require('./profiles.js').deleteProfile('" + sanitise(JSON.stringify(profile)) + "')") Delete
 			td= profile.name
 			//td= profile.sourceport
 			//td= profile.iwad
 			//td= profile.wads
 			//td= profile.autoloadProfile
-button(onclick="addProfile()") Add Profile
+button(onclick="require('./profiles.js').addProfile()") Add Profile

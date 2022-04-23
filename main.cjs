@@ -1,4 +1,4 @@
-// main.js
+// main.cjs
 // Modules to control application life and create native browser window
 const {
 	      app,
@@ -12,7 +12,7 @@ function windowOptions(title)
 		width         : 800,
 		height        : 600,
 		webPreferences: {
-			preload: path.join(__dirname, 'preload.js'),
+			preload: path.join(__dirname, 'preload.cjs'),
 			nodeIntegration: true,
 			contextIsolation: false
 		},

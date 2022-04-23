@@ -1,3 +1,6 @@
+- const utils = require("./utils.js");
+- const expand = utils.expand;
+- const countLines = utils.countLines;
 form(id="profileForm")
 	p Name:&nbsp;&nbsp;
 		input(type="text", disabled="true", name="name", size=50, value=(profile.name||""))
@@ -38,5 +41,5 @@ form(id="profileForm")
 				else
 					option(value=key)
 						=key
-	button(name="save" type="submit" formaction="javascript:profileForm(document.getElementById('profileForm'));") Save
+	button(name="save" type="submit" formaction="javascript:require('./profiles.js').profileForm(document.getElementById('profileForm'));") Save
 	button(name="cancel" formaction="") Cancel
